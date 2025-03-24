@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Law Firm Website Generator</title>
+  <style>
+    :root {
+      --primary: #1A365D;
+      --secondary: #B58B2B;
+      --light: #F7FAFC;
+      --dark: #2D3748;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background-color: var(--light);
+    }
+    
+    header {
+      background-color: var(--primary);
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+    }
+    
+    p {
+      margin-bottom: 1.5rem;
+    }
+    
+    .main {
+      padding: 4rem 0;
+    }
+    
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+    
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+    
+    button {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    button:hover {
+      background-color: #152C4E;
+    }
+    
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .feature-card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      text-align: center;
+    }
+    
+    .feature-icon {
+      font-size: 3rem;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+    }
+    
+    .loading {
+      display: none;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    
+    .result {
+      display: none;
+      margin-top: 2rem;
+      padding: 2rem;
+      background-color: #f0fff4;
+      border: 1px solid #68d391;
+      border-radius: 8px;
+    }
+    
+    .result h3 {
+      color: #2f855a;
+      margin-bottom: 1rem;
+    }
+    
+    .site-url {
+      color: var(--primary);
+      font-weight: bold;
+      word-break: break-all;
+    }
+    
+    footer {
+      background-color: var(--primary);
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Law Firm Website Generator</h1>
+      <p>Create a professional website for your law firm in less than a minute</p>
+    </div>
+  </header>
+  
+  <main class="main">
+    <div class="container">
+      <div class="card">
+        <h2>Generate Your Website</h2>
+        <p>Enter your law firm's information below to create a professional website that showcases your services.</p>
+        
+        <form id="generateForm">
+          <div class="form-group">
+            <label for="firmName">Law Firm Name*</label>
+            <input type="text" id="firmName" required placeholder="e.g., Smith & Associates">
+          </div>
+          
+          <div class="form-group">
+            <label for="description">Brief Description</label>
+            <textarea id="description" rows="3" placeholder="e.g., We specialize in personal injury, family law, and criminal defense with over 20 years of experience."></textarea>
+          </div>
+          
+          <button type="submit">Generate Website</button>
+        </form>
+        
+        <div id="loading" class="loading">
+          <p>Generating your website... Please wait.</p>
+        </div>
+        
+        <div id="result" class="result">
+          <h3>Success! Your Website is Ready</h3>
+          <p>Your law firm website has been created and deployed successfully.</p>
+          <p>Visit your site at: <a id="siteUrl" href="#" target="_blank" class="site-url"></a></p>
+        </div>
+      </div>
+      
+      <div class="features">
+        <div class="feature-card">
+          <div class="feature-icon">🚀</div>
+          <h3>Instant Deployment</h3>
+          <p>Your professional website will be live and accessible worldwide in seconds.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>Responsive Design</h3>
+          <p>Your site will look great on all devices - desktop, tablet, and mobile.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">⚙️</div>
+          <h3>Customizable</h3>
+          <p>Easy to update with your content, services, and contact information.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Law Firm Website Generator. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <script>
+    document.getElementById('generateForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const firmName = document.getElementById('firmName').value;
+      const description = document.getElementById('description').value;
+      
+      // Show loading
+      document.getElementById('loading').style.display = 'block';
+      document.getElementById('result').style.display = 'none';
+      
+      try {
+        const response = await fetch('/api/deploy', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ 
+            firmName,
+            description 
+          })
+        });
+        
+        const data = await response.json();
+        
+        if (response.ok) {
+          // Show result
+          const siteUrl = document.getElementById('siteUrl');
+          siteUrl.textContent = data.url;
+          siteUrl.href = `https://${data.url}`;
+          document.getElementById('result').style.display = 'block';
+        } else {
+          alert('Error: ' + (data.error || 'Failed to generate website'));
+        }
+      } catch (error) {
+        alert('An error occurred. Please try again.');
+        console.error(error);
+      } finally {
+        document.getElementById('loading').style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html> 

@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #1A365D;
+  --secondary: #B58B2B;
+  --accent: #2A4365;
+  --neutral: #F7FAFC;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --primary: #1A365D;
+    --secondary: #B58B2B;
+    --accent: #2A4365;
+    --neutral: #F7FAFC;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-merriweather), serif;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary/90;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-white hover:bg-secondary/90;
+  }
+  
+  .section-padding {
+    @apply py-12 md:py-16 lg:py-24;
+  }
+  
+  .container-custom {
+    @apply container mx-auto px-4 md:px-8;
+  }
+}
